@@ -1,11 +1,5 @@
----
-title: "PA1_template"
-output: html_document
----
+# Reproducible Research: 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ## Loading and preprocessing the data
 
@@ -21,6 +15,10 @@ steps_day <- aggregate(main_data$steps, by = list(Steps.Date = main_data$date), 
 hist(steps_day$x, col = "grey", breaks = 20,
      main = "Tot number of steps taken each day", 
      xlab = "Number of steps per day")
+```
+![Plot1](Plot1.png)
+
+```{r}
 mean_days<-mean(steps_day[,2])
 mean_days
 median_days<-median(steps_day[,2])
