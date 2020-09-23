@@ -1,3 +1,6 @@
+Reproducible Research:
+======================
+
 Loading and preprocessing the data
 ----------------------------------
 
@@ -13,6 +16,7 @@ What is mean total number of steps taken per day?
          xlab = "Number of steps per day")
 
 ![](PA1_template_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+![Plot1](Plot1.png)
 
     mean_days<-mean(steps_day[,2])
     mean_days
@@ -35,7 +39,9 @@ What is the average daily activity pattern?
          ylab = "Avarage number of steps", 
          xlab = "5-min intervals", col="blue")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![](PA1_template_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![Plot2](Plot2.png) On average across all the days in the dataset, the
+5-minute interval contains the maximum number of steps?
 
     interval <- which.max(av_day$x)
     max_int <- av_day[interval,1]
@@ -62,7 +68,8 @@ Imputing missing values
          main = "Tot number of steps taken each day (filled data)",
          xlab = "Number of steps per day")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](PA1_template_files/figure-markdown_strict/unnamed-chunk-6-1.png)
+![Plot3](Plot3.png)
 
     mean_days_filled<-mean(steps_day_filled[,2])
     mean_days_filled
@@ -85,4 +92,5 @@ Are there differences in activity patterns between weekdays and weekends?
       facet_grid(weekend ~.) + xlab("Interval") + ylab("Steps mean") +
       ggtitle("Weekdays and weekends activity patterns")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](PA1_template_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![Plot4](Plot4.png)
